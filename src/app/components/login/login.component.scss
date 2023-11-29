@@ -1,0 +1,25 @@
+.logo{
+  width: 200px;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  mix-blend-mode: exclusion;
+}
+
+.body{
+    
+    height: 100vh;
+}
+button{
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+button:hover{
+  scale: (1.1);
+  transition: linear 0.5s;
+}
+
+input[type = text]{
+  color: red;
+}
