@@ -1,11 +1,14 @@
 <section class="login">
-    <div class="container box ">
-        <form action="">
+    <div class="container box " >
+        <form [formGroup] ="loginform" (ngSubmit) ='getformvalue()'>
             <label for="text" >User Name</label>
-            <input type="text" class="form-control" >
+            <input type="text" class="form-control" name="user" formControlName="user">
             <label for="text" >Password</label>
-            <input type="text" class="form-control" >
+            <input type="password" class="form-control" name="password" formControlName="password" >
+            <input type="checkbox" name="checked" formControlName="checked">
             <button type="submit" class="btn bg-success mt-3 text-center">login</button>
         </form>
     </div>
+
+    <button type="button" (click)="senddata()">Send data from child to parent</button>
 </section>
