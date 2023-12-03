@@ -1,4 +1,4 @@
-import { Component ,Output,EventEmitter, OnInit } from '@angular/core';
+import { Component ,Output,EventEmitter, OnInit, OnDestroy } from '@angular/core';
 import{FormControl,FormGroup}from '@angular/forms'
 
 @Component({
@@ -6,25 +6,26 @@ import{FormControl,FormGroup}from '@angular/forms'
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit ,OnDestroy{
   
   value ='hello';
+  loginform:any;
   @Output() parentfunction:EventEmitter<any> = new EventEmitter()
   constructor(){
 
   }
-  loginform = new FormGroup({
-    user:new FormControl(''),
-    password:new FormControl(''),
-    checked:new FormControl('')
-  })
+  // loginform = new FormGroup({
+  //   user:new FormControl(''),
+  //   password:new FormControl(''),
+  //   checked:new FormControl('')
+  // })
 
   getvalue(event:any){
     this.value = event.target.value;  
   }
 
-  getformvalue(){
-    console.log(this.loginform.value)
+  getformvalue(event:any){
+    console.log(event)
   }
 ngOnInit(){
  
@@ -32,6 +33,10 @@ ngOnInit(){
 senddata(){
   let data = {name:'shailendra',age:26}
   this.parentfunction.emit(data)
+}
+
+ngOnDestroy(): void {
+  console.log('component destroyed')
 }
 
 

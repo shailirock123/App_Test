@@ -1,12 +1,7 @@
-<div class="body">
-    <img src="../../../assets/img/download.jpeg" class="logo" alt="no image">
-    <img src="../../../assets/img/img1.jpeg" class="logo" alt="no image">
-    <img src="../../../assets/img/img2.jpeg" class="logo" alt="no image">
-    <img src="../../../assets/img/img3.jpeg" class="logo" alt="no image">
-    <button type="button">CLICK HERE</button>
+<button (click) = "getdata()">click to get data</button>
 
-
-    <input type="text" >
+<div *ngFor="let item of jasonvalue">
+    <p>{{item.userId}}</p>
 </div>
 
 
